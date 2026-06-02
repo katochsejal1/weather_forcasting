@@ -1,0 +1,70 @@
+.sun {
+  width: 70px;
+  height: 70px;
+  background: #facc15;
+  border-radius: 50%;
+  box-shadow: 0 0 40px #facc15;
+  animation: pulse 2s infinite;
+}
+
+.rain {
+  width: 80px;
+  height: 40px;
+  background: #9ca3af;
+  border-radius: 50px;
+  position: relative;
+}
+
+.rain::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 15px;
+  background: #3b82f6;
+  left: 20px;
+  top: 45px;
+  box-shadow: 10px 0 #3b82f6, 20px 0 #3b82f6, 30px 0 #3b82f6;
+  animation: rain 1s infinite linear;
+}
+
+.thunder::after {
+  content: "⚡";
+  font-size: 30px;
+  animation: flash 1s infinite;
+}
+
+.snow::after {
+  content: "❄️ ❄️ ❄️";
+  display: block;
+  margin-top: 10px;
+  animation: fall 2s infinite linear;
+}
+
+.mist {
+  width: 80px;
+  height: 20px;
+  background: #d1d5db;
+  border-radius: 20px;
+  animation: fade 2s infinite alternate;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.1); }
+}
+
+@keyframes rain {
+  100% { transform: translateY(12px); opacity: 0; }
+}
+
+@keyframes flash {
+  50% { opacity: 0; }
+}
+
+@keyframes fall {
+  100% { transform: translateY(10px); }
+}
+
+@keyframes fade {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
